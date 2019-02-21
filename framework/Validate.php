@@ -2,7 +2,7 @@
 namespace framework;
 class Validate
 {
-	private $_message;
+	protected $_message;
 	function getMessage()
 	{
 		return $this->_message;

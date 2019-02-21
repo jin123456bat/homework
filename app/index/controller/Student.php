@@ -31,12 +31,12 @@ class Student extends Controller
 				'company_description'
 			]);
 			
+			
 			$validate = new \app\index\validate\Users();
 			if (!$validate->check($data))
 			{
 				return new Message($validate->getMessage(),Url::build('student/create'));
 			}
-			
 			if(Users::insert($data))
 			{
 				return new Message('save success',Url::build('student/create'));
