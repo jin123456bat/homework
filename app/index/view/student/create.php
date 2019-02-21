@@ -81,6 +81,7 @@
 	</form>
 	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
+	//点击是否由公司的那个checkbox的时候隐藏或者显示公司名称和介绍的输入框
 	$('#company').on('change',function(){
 		if($(this).is(':checked'))
 		{

@@ -11,6 +11,8 @@ class Index extends Controller
 {
 	function index()
 	{
+		//实例化视图
+		//直接返回app/view/index/index.php的模板的内容
 		return new View();
 	}
 	
@@ -28,6 +30,7 @@ class Index extends Controller
 			return new Redirect('student/create');
 		}
 		
+		//如果账号密码不对 给出提示 并且跳转到登录页
 		return new Message('username or password is wrong',Url::build('index/index'));
 	}
 }

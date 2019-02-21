@@ -17,6 +17,7 @@ class Student extends Controller
 		}
 		else
 		{
+			//读取数据
 			$data = Request::post([
 				'first_name',
 				'last_name',
@@ -37,6 +38,8 @@ class Student extends Controller
 			{
 				return new Message($validate->getMessage(),Url::build('student/create'));
 			}
+			
+			//添加数据
 			if(Users::insert($data))
 			{
 				return new Message('save success',Url::build('student/create'));

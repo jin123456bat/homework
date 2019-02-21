@@ -115,11 +115,13 @@
 	</table>
 	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 	<script type="text/javascript">
+	//点击上箭头 给后台提交排序的字段和排序方式
 	$('.icon').on('click','.up',function(){
 		var field = $(this).parents('th').find('span:eq(0)').html();
 		var order = 'asc';
 		window.location = 'index.php?c=admin&a=index&field='+field+'&order='+order;
 	}).on('click','.down',function(){
+		//点击下箭头 给后台提交排序的字段和排序方式
 		var field = $(this).parents('th').find('span:eq(0)').html();
 		var order = 'desc';
 		window.location = 'index.php?c=admin&a=index&field='+field+'&order='+order;
