@@ -1,4 +1,9 @@
 <?php
+/**
+ * 自动加载
+ * @author jin12
+ *
+ */
 class Loader
 {
 	/**

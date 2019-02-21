@@ -1,5 +1,10 @@
 <?php
 namespace framework;
+/**
+ * 请求类
+ * @author jin12
+ *
+ */
 class Request
 {	
 	static function get($name,$default = NULL)

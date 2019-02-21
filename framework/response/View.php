@@ -3,6 +3,12 @@ namespace framework\response;
 use framework\Response;
 use framework\Application;
 
+/**
+ * 视图类
+ * 视图是基于响应的一个类 所以要继承response类
+ * @author jin12
+ *
+ */
 class View extends Response
 {
 	private $_path;

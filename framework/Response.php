@@ -1,5 +1,10 @@
 <?php
 namespace framework;
+/**
+ * 响应基类
+ * @author jin12
+ *
+ */
 class Response
 {
 	protected $_header = [];

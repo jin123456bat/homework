@@ -1,5 +1,10 @@
 <?php
 namespace framework;
+/**
+ * 路由
+ * @author jin12
+ *
+ */
 class Router
 {
 	function getModuleName()
