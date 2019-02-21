@@ -26,7 +26,7 @@ class HttpClient
 					}
 				}
 			}
-			$curl = curl_init();
+			$curl = curl_init($url);
 			$user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.59 Safari/537.36';
 			curl_setopt_array($curl, array(
 				CURLOPT_RETURNTRANSFER => 1,
@@ -39,7 +39,8 @@ class HttpClient
 				CURLOPT_SSL_VERIFYPEER => false,
 				CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
 				CURLOPT_HTTPHEADER => array(
-					'User-Agent: ' . $user_agent
+					'User-Agent: ' . $user_agent,
+					'Content-Type: application/json;charset=UTF-8'
 				),
 				CURLOPT_USERAGENT => $user_agent,
 				CURLINFO_HEADER_OUT => true

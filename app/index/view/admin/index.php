@@ -5,19 +5,87 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./assets/css/datatables.css" type="text/css" media="all" />
 </head>
+<style>
+.up, .down {
+	cursor: pointer;
+}
+
+.up:after {
+	content: '^';
+	display: block;
+}
+
+.down:after {
+	content: '^';
+	transform: rotate(180deg);
+	display: block;
+}
+
+.icon {
+	display: inline-block;
+}
+</style>
 <body>
 	<table class="table">
 		<?php if (!empty($data)){?>
 		<thead>
 			<tr>
-				<th>id</th>
-				<th>name</th>
-				<th>username</th>
-				<th>email</th>
-				<th>address</th>
-				<th>phone</th>
-				<th>website</th>
-				<th>company</th>
+				<th>
+					<span>id</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>name</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>username</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>email</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>address</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>phone</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>website</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
+				<th>
+					<span>company</span>
+					<span class="icon">
+						<i class="up"></i>
+						<i class="down"></i>
+					</span>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -45,5 +113,17 @@
 		</tbody>
 		<?php }?>
 	</table>
+	<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$('.icon').on('click','.up',function(){
+		var field = $(this).parents('th').find('span:eq(0)').html();
+		var order = 'asc';
+		window.location = 'index.php?c=admin&a=index&field='+field+'&order='+order;
+	}).on('click','.down',function(){
+		var field = $(this).parents('th').find('span:eq(0)').html();
+		var order = 'desc';
+		window.location = 'index.php?c=admin&a=index&field='+field+'&order='+order;
+	});
+	</script>
 </body>
 </html>

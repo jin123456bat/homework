@@ -18,6 +18,10 @@ class View extends Response
 			$a = Application::getCurrentActionName();
 			$this->_path = './app/'.$m.'/view/'.$c.'/'.$a.Application::getConfig('default_suffix');
 		}
+		else
+		{
+			$this->_path = $path;
+		}
 	}
 	
 	function assign($key,$value)

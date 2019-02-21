@@ -4,6 +4,8 @@ use framework\Controller;
 use framework\response\View;
 use framework\Request;
 use framework\response\Redirect;
+use framework\response\Message;
+use framework\core\Url;
 
 class Index extends Controller
 {
@@ -19,13 +21,13 @@ class Index extends Controller
 		
 		if ($username == 'admin' && $password == 'admin')
 		{
-			return new Redirect('admin/admin');
+			return new Redirect('admin/index');
 		}
 		else if ($username == 'student' && $password == 'student')
 		{
-			return new Redirect('student/student');
+			return new Redirect('student/create');
 		}
 		
-		return new View('./framework/view/message.html');
+		return new Message('username or password is wrong',Url::build('index/index'));
 	}
 }
